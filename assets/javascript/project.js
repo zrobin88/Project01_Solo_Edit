@@ -68,11 +68,11 @@ $("#events-tab").on("click", function () {
   for (let i = 0; i < 6; i++) {
     $(`#row-${i}`).append(`
         <a href="${events[i].url} target="_blank">
-          <div class="col s5">
+          <div class="col s3">
             <img class="responsive-img" src="${events[i].images[0].url}">
           </div>
-          <div class="col s7">
-            <h6 id="text-deco-none">${events[i]._embedded.venues[0].city.name}, ${events[i]._embedded.venues[0].country.countryCode}</h6>
+          <div class="col s9">
+            <h6 class ="flow-text" id="text-deco-none">${events[i]._embedded.venues[0].city.name}, ${events[i]._embedded.venues[0].country.countryCode}</h6>
             <h4 class="flow-text">${events[i]._embedded.venues[0].name}</h4>
             <p class="flow-text">${events[i].dates.start.localDate}</p>
             <p class="flow-text">${moment(events[i].dates.start.localTime, "HH:mm:ss").format("h:mm A")}</p>
@@ -142,13 +142,13 @@ $("#artist-submit").on("click", function () {
     $("#artist-info").append(artistInfo);
     $("#band-picture").append(`<img class="responsive-img" src="${artistImg}"/>`);
     $("#band-name").append(`<h2 class="flow-text center-align">${bandName}</h2>`);
-    similarArtistButton.append(`<h4>Sounds Like:</h4>`)
+    similarArtistButton.append(`<h4 class ="flow-text">Sounds Like:</h4>`)
     for (let i = 0; i < 2; i++) {
       //similarArtistButton.append(response_ai.artist.similar.artist[i].name)
       
       similarArtistButton.append(`
         <a href=${response_ai.artist.similar.artist[i].url}>
-         <h4>${response_ai.artist.similar.artist[i].name}</h4>
+         <h4 class ="flow-text" style ="margin-right: 10px">${response_ai.artist.similar.artist[i].name}</h4>
         </a>      
       `)
     }
